@@ -243,6 +243,23 @@ img{ max-width:100%; height:auto; display:block; }
     radial-gradient(420px 220px at 40% 60%, rgba(35,178,107,.35), transparent 60%),
     linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.02));
 }
+.visual-card__link{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.visual-card__link:hover{
+  opacity: 0.98;
+}
+
+.visual-card__link:hover .visual-card__img--photo img{
+  transform: scale(1.02);
+}
+
+.visual-card__img--photo img{
+  transition: transform .18s ease;
+}
 .badge{
   position: absolute;
   right: 18px;
@@ -615,6 +632,7 @@ h2{
   .footer__grid{ grid-template-columns: 1fr; }
   .footer__bottom{ flex-direction: column; }
 }
+
 
 
 
