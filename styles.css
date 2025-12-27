@@ -237,7 +237,7 @@ img{ max-width:100%; height:auto; display:block; }
   background: rgba(10,20,40,.15);
 }
 .visual-card__img{
-  height: 590px;
+  height: 390px;
   background:
     radial-gradient(500px 220px at 60% 40%, rgba(11,102,255,.55), transparent 65%),
     radial-gradient(420px 220px at 40% 60%, rgba(35,178,107,.35), transparent 60%),
@@ -615,6 +615,7 @@ h2{
   .footer__grid{ grid-template-columns: 1fr; }
   .footer__bottom{ flex-direction: column; }
 }
+
 
 
 
