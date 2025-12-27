@@ -244,16 +244,16 @@ img{ max-width:100%; height:auto; display:block; }
     linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.02));
 }
 .badge{
-  position:absolute;
+  position: absolute;
   right: 18px;
   bottom: 16px;
-  background: #23b26b;
+  background: #FF0000; /* YouTube red */
   color: white;
   font-weight: 900;
   padding: 12px 14px;
   border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.18);
-  text-align:left;
+  box-shadow: 0 10px 30px rgba(0,0,0,.22);
+  text-align: left;
 }
 .badge span{ font-weight: 700; opacity:.95; }
 
@@ -615,6 +615,7 @@ h2{
   .footer__grid{ grid-template-columns: 1fr; }
   .footer__bottom{ flex-direction: column; }
 }
+
 
 
 
