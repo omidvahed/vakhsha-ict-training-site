@@ -3,6 +3,7 @@
 window.BLOG_POSTS = window.BLOG_POSTS || [];
 
 window.BLOG_POSTS.push({
+	id: "blog-02",
 	title: "AI backend network in the cloud",
 	date: "2025-02-01",
 	summary:

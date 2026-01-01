@@ -3,6 +3,7 @@
 window.BLOG_POSTS = window.BLOG_POSTS || [];
 
 window.BLOG_POSTS.push({
+	id: "blog-04",
 	title: "Step by Step Guide for vNets and Subnets on Azure",
 	date: "2024-10-30",
 	summary:

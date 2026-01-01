@@ -6,6 +6,9 @@
 window.BLOG_POSTS = window.BLOG_POSTS || [];
 
 window.BLOG_POSTS.push({
+	// Required for shareable links:
+	// blog.html?post=YOUR_ID
+	id: "blog-XX",
 	title: "",
 	date: "YYYY-MM-DD",
 	summary: "",

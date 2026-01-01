@@ -29,6 +29,7 @@ window.BLOG_POSTS = window.BLOG_POSTS || [];
 
 const FALLBACK_POSTS = [
   {
+    id: "welcome",
     title: "Welcome: How I structure Azure networking labs",
     date: "2025-12-25",
     summary:
@@ -40,6 +41,20 @@ const FALLBACK_POSTS = [
 ];
 
 const BLOG_POSTS = window.BLOG_POSTS.length ? window.BLOG_POSTS : FALLBACK_POSTS;
+
+function slugify(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
+}
+
+function deriveFallbackId(post) {
+  const datePart = post?.date ? String(post.date) : "post";
+  const titlePart = post?.title ? slugify(post.title) : "untitled";
+  return `${datePart}-${titlePart}`;
+}
 
 function formatBlogDate(isoDate) {
   const d = new Date(isoDate);
@@ -55,18 +70,14 @@ function renderBlogPosts() {
   grid.innerHTML = "";
 
   for (const post of posts) {
-    const primaryUrl = post.youtubeUrl || post.articleUrl || post.url;
-    if (!primaryUrl) continue;
-
-    const primaryLabel = post.youtubeUrl ? "Watch" : "Learn more";
+    const postId = post.id || deriveFallbackId(post);
+    const detailUrl = `blog.html?post=${encodeURIComponent(postId)}`;
 
     const article = document.createElement("article");
     article.className = "blog-card";
 
     const mediaLink = document.createElement("a");
-    mediaLink.href = primaryUrl;
-    mediaLink.target = "_blank";
-    mediaLink.rel = "noopener noreferrer";
+    mediaLink.href = detailUrl;
     mediaLink.setAttribute("aria-label", `Open link: ${post.title}`);
 
     const media = document.createElement("div");
@@ -96,10 +107,8 @@ function renderBlogPosts() {
 
     const action = document.createElement("a");
     action.className = "link";
-    action.href = primaryUrl;
-    action.target = "_blank";
-    action.rel = "noopener noreferrer";
-    action.textContent = primaryLabel;
+    action.href = detailUrl;
+    action.textContent = "Reaad more";
 
     actions.appendChild(action);
     body.appendChild(meta);

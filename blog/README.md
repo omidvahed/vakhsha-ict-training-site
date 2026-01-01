@@ -1,17 +1,12 @@
-# Blog posts
+How you add a new weekly post now
 
-This site loads blog posts from individual files in this folder.
+Create blog/blog-0N.js by copying blog-template.js
+Add your image in blog
+Add one line in index.html: <script src="blog/blog-0N.js"></script>
 
-## How it works
-- Each post is a standalone JS file (e.g. `blog-01.js`).
-- The file pushes a post object into `window.BLOG_POSTS`.
-- `index.html` includes the post files, then `script.js` renders the Blog section.
+Shareable links
 
-## Add a new post (weekly)
-1) Copy `blog-template.js` to a new file, e.g. `blog-02.js`
-2) Update the fields: `title`, `date`, `summary`, `coverImage`, and one link (`youtubeUrl` or `articleUrl`)
-3) Add one new `<script src="blog/blog-02.js"></script>` line in `index.html` above `script.js`
+Each post must include an `id` field (example: "blog-06").
+The shareable URL for a post is:
 
-Notes:
-- Keeping posts in separate files isolates content from the main code.
-- Browsers cannot automatically list local folders, so `index.html` must reference each new post file.
+blog.html?post=YOUR_ID

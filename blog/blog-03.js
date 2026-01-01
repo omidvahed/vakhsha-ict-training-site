@@ -3,6 +3,7 @@
 window.BLOG_POSTS = window.BLOG_POSTS || [];
 
 window.BLOG_POSTS.push({
+	id: "blog-03",
 	title: "Advance FortiGate Cluster Deployment on Azure",
 	date: "2025-01-11",
 	summary:
